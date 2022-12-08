@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "column",
   },
   inputView: {
     backgroundColor: '#FFC0CB',
@@ -42,6 +43,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     alignItems: "center",
     paddingBottom: 30,
+  },
+  loginText: {
+    marginBottom: 20,
+    padding: 30
+  },
+  space: {
+    width: 20, // or whatever size you need
+    height: 20,
   }
 });
 
@@ -95,16 +104,105 @@ function HomeScreen({navigation}) {
       <Button 
       style={styles.loginText}
       title="Push To Talk"
-      onPress={() => navigation.navigate('Home')}
+      onPress={() => navigation.navigate('Final')}
+      />
+      <View style={styles.space} />
+      <Button 
+      style={styles.loginText}
+      title="Library"
+      onPress={() => navigation.navigate('Library')}
       />
     </View>
   );
 }
 
-function DetailsScreen() {
+function LibraryScreen({navigation}) {
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <Text style={styles.title}>THIEA</Text>
+
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Recent Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Recent Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Recent Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Previous Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Previous Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Previous Destination"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(user) => setUser(user)}
+        />
+      </View>
+      <Button 
+      style={styles.loginText}
+      title="Push To Talk"
+      onPress={() => navigation.navigate('Home')}
+      />
+      <View style={styles.space} />
+      <Button 
+      style={styles.loginText}
+      title="Library"
+      onPress={() => navigation.navigate('Library')}
+      />
+    </View>
+    
+  );
+}
+
+function FinalScreen({navigation}) {
+  return (
+    <View style={{ flex: 1,backgroundColor:"#fff", alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{fontSize: 20, fontWeight: "bold",}}>Destination Reached</Text>
+      <View style={styles.space} />
+      <Button 
+      style={styles.loginText}
+      title="Push To Talk"
+      onPress={() => navigation.navigate('Home')}
+      />
+      <View style={styles.space} />
+      <Button 
+      style={styles.loginText}
+      title="Library"
+      onPress={() => navigation.navigate('Library')}
+      />
     </View>
   );
 }
@@ -117,7 +215,8 @@ function App() {
       <Stack.Navigator initialRouteName='Login'>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Final" component={FinalScreen} />
+        <Stack.Screen name="Library" component={LibraryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
