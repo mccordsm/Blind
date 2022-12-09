@@ -259,7 +259,11 @@ function LibraryScreen({navigation}) {
 }
 
 function CreateScreen({navigation}) {
-
+  const [user, setUser] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
+  const [ZIP, setZIP] = useState('');
+  const [emergency, setEmergency] = useState('');
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -278,7 +282,7 @@ function CreateScreen({navigation}) {
           style={styles.TextInput}
           placeholder="Password"
           placeholderTextColor="#003f5c"
-          onChangeText ={(user) => setUser(user)}
+          onChangeText ={(password) => setPassword(password)}
         />
       </View>
       <View style={styles.inputView}>
@@ -286,7 +290,7 @@ function CreateScreen({navigation}) {
           style={styles.TextInput}
           placeholder="Address"
           placeholderTextColor="#003f5c"
-          onChangeText ={(user) => setUser(user)}
+          onChangeText ={(address) => setAddress(address)}
         />
       </View>
       <View style={styles.inputView}>
@@ -294,7 +298,7 @@ function CreateScreen({navigation}) {
           style={styles.TextInput}
           placeholder="Phone Number"
           placeholderTextColor="#003f5c"
-          onChangeText ={(user) => setUser(user)}
+          onChangeText ={(phone) => setPhone(phone)}
         />
       </View>
       <View style={styles.inputView}>
@@ -302,7 +306,15 @@ function CreateScreen({navigation}) {
           style={styles.TextInput}
           placeholder="ZIP"
           placeholderTextColor="#003f5c"
-          onChangeText ={(user) => setUser(user)}
+          onChangeText ={(ZIP) => setZIP(ZIP)}
+        />
+      </View>
+      <View style={styles.inputView}>
+        <TextInput 
+          style={styles.TextInput}
+          placeholder="Emergency Number"
+          placeholderTextColor="#003f5c"
+          onChangeText ={(emergency) => setEmergency(emergency)}
         />
       </View>
       <Button 
