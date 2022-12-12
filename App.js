@@ -58,6 +58,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: 10,
   },
+  sub2Title: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    alignItems: "center",
+    paddingBottom: 10,
+  },
   loginText: {
     marginBottom: 20,
     padding: 30
@@ -81,7 +87,7 @@ function LoginScreen({navigation}) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.title}>THIEA</Text>
+      <Text style={styles.title}>THEIA</Text>
 
       <View style={styles.inputView}>
         <TextInput 
@@ -121,6 +127,10 @@ function LoginScreen({navigation}) {
 
 function HomeScreen({navigation}) {
   const [Destination, setDestination] = useState('');
+  const items1 = ["Head straight for 100 feet"]
+  const items2 = ["Turn right"]
+  const items3 = ["Head straight 20 feet"]
+  const items4 = ["Turn left"]
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -129,12 +139,14 @@ function HomeScreen({navigation}) {
       title="Emergency Services"
       onPress={() => navigation.navigate('Emergency')}
       />
-      <View style={styles.space} />
-      <View style={styles.space} />
-      <View style={styles.space} />
-      <View style={styles.space} />
       <Text style={styles.title}>THIEA</Text>
-
+      <View style={styles.sub2Title} >
+        <Text style={styles.subTitle}>{items1}</Text>
+        <Text style={styles.subTitle}>{items2}</Text>
+        <Text style={styles.subTitle}>{items3}</Text>
+        <Text style={styles.subTitle}>{items4}</Text>
+      </View>
+      <View style={styles.space} />
       <View style={styles.inputView}>
         <TextInput 
           style={styles.TextInput}
@@ -191,7 +203,7 @@ function LibraryScreen({navigation}) {
       onPress={() => navigation.navigate('Emergency')}
       />
       <View style={styles.space} />
-      <Text style={styles.title}>THIEA</Text>
+      <Text style={styles.title}>THEIA</Text>
       <Text style={styles.subTitle}>Recent Destinations</Text>
       <View style={styles.destView}>
         <TextInput 
@@ -267,7 +279,7 @@ function CreateScreen({navigation}) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text style={styles.title}>THIEA</Text>
+      <Text style={styles.title}>THEIA</Text>
 
       <View style={styles.inputView}>
         <TextInput 
